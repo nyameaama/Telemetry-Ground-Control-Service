@@ -1,9 +1,15 @@
 #include <Arduino.h>
+#include"GetData/Getdata.h"
 
 void setup() {
-  // put your setup code here, to run once:
+    //initialize serial communications at a 9600 baud rate
+    Serial.begin(9600);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+    dataGet ret;
+    //send data over the serial port
+    //Serial.println();
+
+
 }
