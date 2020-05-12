@@ -3,6 +3,7 @@ int BACK_FILL;
 String typing = "";
 // Variable to store saved text when return is hit
 String saved = "";
+String keyP;
 
 void createBoxDataElement(float screenposX,float screenposY,float reading){
     float box_width = 110;
@@ -26,8 +27,8 @@ void createGraphDataElemnt(float screenposX,float screenposY,float reading){
 void UserInputElement(String prompt,float screenposX,float screenposY){
     int textFill = (BACKGROUND_FILL == 0) ? 255 : 0;
     float width = 500,height = 100;
-    float xPos = (screenposX - width/2) + 5;
-    float yPos = 0.0;
+    float xPos = (screenposX - width/2) + 250;
+    float yPos = screenposY;
     rectMode(CENTER);
     fill(BACKGROUND_FILL);
     stroke(textFill);
@@ -38,19 +39,20 @@ void UserInputElement(String prompt,float screenposX,float screenposY){
     text(prompt +":",PposX,screenposY);
     // Display everything
     //text("Click in this window and type. \nHit enter to save. ", xPos, yPos);
+    fill(textFill);
     text(typing,xPos,yPos);
     //text("Saved text: " + saved,indent,230);
 }
 
 void keyPressed() {
-  // If the return key is pressed, save the String and clear it
-  if (key == '\n' ) {
-    saved = typing;
+    // If the return key is pressed, save the String and clear it
+    if (key == '\n' ) {
+        saved = typing;
     // A String can be cleared by setting it equal to ""
-    typing = ""; 
-  } else {
-    // Otherwise, concatenate the String
-    // Each character typed by the user is added to the end of the String variable.
-    typing = typing + key; 
-  }
+        typing = ""; 
+    } else {
+        // Otherwise, concatenate the String
+        // Each character typed by the user is added to the end of the String variable.
+        typing = typing + key; 
+    }
 }
