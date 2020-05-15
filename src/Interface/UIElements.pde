@@ -4,21 +4,66 @@ String typing = "";
 // Variable to store saved text when return is hit
 String saved = "";
 String keyP;
+//Number of elements in ElementPosArr
+int posArrNum;
+float ElementPosArr[] = = new float[64];
 
-void createBoxDataElement(float screenposX,float screenposY,float reading){
+void createBoxDataElement(float size,float screenposX,float screenposY,float reading){
     float box_width = 110;
     float box_height = 55;
+    float widthArr[] = {70,90,110};
+    float heightArr[] = {45,65,85};
+    for(int i = 0; i < 3;i++){
+        box_width = (size == i) ? widthArr[i] : box_width;
+        for(int j = 0; j < 3;j++){
+            box_height = (size == j) ? heightArr[j] : box_height;
+        }
+    }
     int textFill = (BACKGROUND_FILL == 0) ? 255 : 0;
     rectMode(CENTER);
     fill(BACKGROUND_FILL);
     stroke(textFill);
-    rect(screenposX,screenposY,box_width,box_height,7);
+    rect(screenposX,screenposY,box_width,box_height,25);
     textSize(14);
     fill(textFill);
     textAlign(CENTER);
     text(reading,screenposX,screenposY);
-    
+    //Store Location and size
+    if(ElementCheck(screenposX, screenposY,box_width,box_height) == true){
+        //Do not put in array
+    }else{    
+        ElementPosArr[posArrNum] = screenposX;
+        ElementPosArr[posArrNum + 1] = screenposY;
+        ElementPosArr[posArrNum + 2] = box_width;
+        ElementPosArr[posArrNum + 3] = box_height;
+        posArrNum += 4;
+    }
 }
+
+boolean ElementCheck(float x, float y, float w, float h){
+    boolean duplicatePairs = false;
+    float countElem = 0;
+    if(posArrNum < 12){
+      return false;
+    }  
+    for(int i = 0; i < posArrNum;i += 4){
+        if(ElementPosArr[i] == x){
+            countElem++;
+        }
+         if(ElementPosArr[i + 1] == y){
+            countElem++;
+        }
+         if(ElementPosArr[i + 2] == w){
+            countElem++;
+        }
+         if(ElementPosArr[i + 3] == h){
+            countElem++;
+        }
+    }
+    duplicatePairs = (countElem > 3) ? true : false;
+    return duplicatePairs;
+}
+
 
 void createGraphDataElemnt(float screenposX,float screenposY,float reading){
 
