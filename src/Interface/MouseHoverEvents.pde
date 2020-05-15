@@ -1,3 +1,5 @@
+boolean hoverStillPresent = false;
+
 void hoverElementColorChange(){
     //Search UI element positions to determine if mouse is hovering
     //over it
@@ -20,9 +22,48 @@ void hoverElementColorChange(){
         if(mouseX >= leftSideBound && mouseX <= rightSideBound && mouseY >= upperBound && mouseY <= lowerBound ){
             fill(255);
             text("Yes",400,10);
+            //Call color change function
+            hoverStillPresent = true;
+            //Call highlight function
+            elementHighlight(currentElementx,currentElementy,currentElementWidth,currentElementHeight);
         }else{
             fill(255);
             text("No",400,10);
+            hoverStillPresent = false;
         }
     }
+}
+
+boolean ElementCheck(float x, float y, float w, float h){
+    boolean duplicatePairs = false;
+    float countElem = 0;
+    if(posArrNum < 64){
+      return false;
+    }  
+    for(int i = 0; i < posArrNum;i += 4){
+        if(ElementPosArr[i] == x){
+            countElem++;
+        }
+         if(ElementPosArr[i + 1] == y){
+            countElem++;
+        }
+         if(ElementPosArr[i + 2] == w){
+            countElem++;
+        }
+         if(ElementPosArr[i + 3] == h){
+            countElem++;
+        }
+    }
+    duplicatePairs = (countElem > 4) ? true : false;
+    return duplicatePairs;
+}
+
+void elementHighlight(float x,float y,float w,float h){
+    float percent_increase = 0.10;
+    if(hoverStillPresent){
+        rectMode(CENTER);
+        //fill(255);
+        rect(x,y,w + (percent_increase * w),h + (percent_increase * h),25);
+    }
+    
 }

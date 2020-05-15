@@ -40,31 +40,6 @@ void createBoxDataElement(float size,float screenposX,float screenposY,float rea
     }
 }
 
-boolean ElementCheck(float x, float y, float w, float h){
-    boolean duplicatePairs = false;
-    float countElem = 0;
-    if(posArrNum < 12){
-      return false;
-    }  
-    for(int i = 0; i < posArrNum;i += 4){
-        if(ElementPosArr[i] == x){
-            countElem++;
-        }
-         if(ElementPosArr[i + 1] == y){
-            countElem++;
-        }
-         if(ElementPosArr[i + 2] == w){
-            countElem++;
-        }
-         if(ElementPosArr[i + 3] == h){
-            countElem++;
-        }
-    }
-    duplicatePairs = (countElem > 3) ? true : false;
-    return duplicatePairs;
-}
-
-
 void createGraphDataElemnt(float screenposX,float screenposY,float reading){
 
 }
