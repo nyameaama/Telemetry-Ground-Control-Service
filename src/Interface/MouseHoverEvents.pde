@@ -8,7 +8,7 @@ void hoverElementColorChange(){
     int currentElementx = 4;
     int h = 1, w = 2, y = 3, x = 4;
     int numberofElements = posArrNum / 4;
-    for(int i = 0; i < numberofElements;i++){
+    for(int i = 1; i < numberofElements;i++){
         currentElementWidth = (ElementPosArr[(4 * i) - w]);
         currentElementHeight = (ElementPosArr[(4 * i) - h]);
         currentElementy = (ElementPosArr[(4 * i) - y]);
@@ -17,7 +17,7 @@ void hoverElementColorChange(){
         rightSideBound = currentElementx + (currentElementWidth / 2);
         upperBound = currentElementy - (currentElementHeight / 2);
         lowerBound = currentElementy + (currentElementHeight / 2);
-        if(mouseX > leftSideBound && mouseX < rightSideBound || mouseY > upperBound && mouseY < lowerBound ){
+        if(mouseX >= leftSideBound && mouseX <= rightSideBound && mouseY >= upperBound && mouseY <= lowerBound ){
             fill(255);
             text("Yes",400,10);
         }else{
