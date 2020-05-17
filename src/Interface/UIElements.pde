@@ -6,9 +6,9 @@ String saved = "";
 String keyP;
 //Number of elements in ElementPosArr
 int posArrNum;
-float ElementPosArr[] = = new float[64];
+float ElementPosArr[] = new float[64];
 
-void createBoxDataElement(float size,float screenposX,float screenposY,float reading){
+void createBoxDataElement(float size,float screenposX,float screenposY,float reading,String ElementTag){
     float box_width = 110;
     float box_height = 55;
     float widthArr[] = {70,90,110};
@@ -31,7 +31,8 @@ void createBoxDataElement(float size,float screenposX,float screenposY,float rea
     //Store Location and size
     if(ElementCheck(screenposX, screenposY,box_width,box_height) == true){
         //Do not put in array
-    }else{    
+    }else{
+        createUIelementID(String ElementTag);    
         ElementPosArr[posArrNum] = screenposX;
         ElementPosArr[posArrNum + 1] = screenposY;
         ElementPosArr[posArrNum + 2] = box_width;
