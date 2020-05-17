@@ -32,7 +32,7 @@ void createBoxDataElement(float size,float screenposX,float screenposY,float rea
     if(ElementCheck(screenposX, screenposY,box_width,box_height) == true){
         //Do not put in array
     }else{
-        createUIelementID(String ElementTag);    
+        createUIelementID(ElementTag,screenposX,screenposY,box_width,box_height);    
         ElementPosArr[posArrNum] = screenposX;
         ElementPosArr[posArrNum + 1] = screenposY;
         ElementPosArr[posArrNum + 2] = box_width;
