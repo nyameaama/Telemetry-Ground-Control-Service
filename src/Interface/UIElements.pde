@@ -42,7 +42,11 @@ void createBoxDataElement(float size,float screenposX,float screenposY,float rea
 }
 
 void createGraphDataElemnt(float screenposX,float screenposY,float reading){
-
+    //Temp
+    float arWidth = 100;
+    float arHeight = 200;
+    rectMode(CENTER);
+    rect(screenposX,screenposY,arWidth, arHeight);
 }
 
 void UserInputElement(String prompt,float screenposX,float screenposY){
