@@ -17,18 +17,22 @@ void draw(){
 void UIPlacementP1(){
     //Top Bar Line
     line(100,100,1300,100);
-    //Top left Velocity
     createBoxDataElement(1,180,150,66,"VEL");
-    //Velocity Graph
-    createGraphDataElemnt(180,300,0.5);
-    //Middle left altitude
-    createBoxDataElement(1,180,450,66,"ALT"); 
-    //Altitude Graph
-    createGraphDataElemnt(180,600,0.5)
-    //Top Right Pitch
-    createBoxDataElement(1,1185,150,66,"PIT");
-    
-    //Middle Right Yaw
+    createBoxDataElement(1,180,450,66,"ALT");
     createBoxDataElement(1,1185,450,66,"YAW");
-
+    createBoxDataElement(1,710,600,66,"ROLL");
+    //Flight State
+    createBoxDataElement(4,710,200,66,"FSTATE");
+    hoverElementColorChange();
+    noFill();
+    //"VEL"
+    createGraphDataElemnt(180,300,0.5);
+    //"ALT"
+    createGraphDataElemnt(180,600,0.5);
+    //"PIT"
+    createGraphDataElemnt(1185,300,0.5);
+   //"YAW"
+    createGraphDataElemnt(1185,600,0.5);
+    //ROLL
+    createGraphDataElemnt(710,750,0.5);
 }

@@ -11,11 +11,11 @@ float ElementPosArr[] = new float[64];
 void createBoxDataElement(float size,float screenposX,float screenposY,float reading,String ElementTag){
     float box_width = 110;
     float box_height = 55;
-    float widthArr[] = {70,90,110};
-    float heightArr[] = {45,65,85};
-    for(int i = 0; i < 3;i++){
+   float widthArr[] = {70,90,110,130,150,170,190,210,230,250,270,290,310};
+    float heightArr[] = {45,65,85,115,135,155,175,195,215,235,255,275,295};
+    for(int i = 0; i < 13;i++){
         box_width = (size == i) ? widthArr[i] : box_width;
-        for(int j = 0; j < 3;j++){
+        for(int j = 0; j < 13;j++){
             box_height = (size == j) ? heightArr[j] : box_height;
         }
     }
