@@ -35,42 +35,6 @@ String findElementID(String ID){
     return newPosStr;
 }
 
-void updateValue(String ID,float newVal){
-    //Draws element with new value onto derived position
-    int last_index;
-    String pos = findElementID(ID);
-    float xpos,ypos,width,height;
-    for(int i = 7;i < findFirstDot(7,pos) + 2;i++){
-        xpos += pos[i];
-    } 
-    last_index = findFirstDot(7,pos) + 2;
-    for(int j = last_index;j < findFirstDot(last_index,pos) + 2;j++){
-        ypos += pos[j];
-    }
-    last_index = findFirstDot(last_index,pos) + 2;
-    for(int k = last_index;k < findFirstDot(last_index,pos) + 2;k++){
-        width += pos[k];
-    }
-    last_index = findFirstDot(last_index,pos) + 2;
-    for(int l = last_index;l < findFirstDot(last_index,pos) + 2;l++){
-        height += pos[l];
-    }
-    last_index = findFirstDot(last_index,pos) + 2;
-    rectMode(CENTER);
-    rect(xpos,ypos,width,height,25);
-    text(newVal,xpos,ypos);
-}    
-
-int findFirstDot(float start,String x){
-    int dot_index;
-    for(int i = start;i < x.length();i++){
-        if(i == "."){
-            dot_index = i;
-        }
-    }
-    return dot_index;
-}
-
 boolean Customcomp(String x, String y){
     //Returns true for element when comparison is true
     boolean confirm = false;
