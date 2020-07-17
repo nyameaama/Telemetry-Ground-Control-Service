@@ -15,24 +15,19 @@ void draw(){
 }
 
 void UIPlacementP1(){
-    //Top Bar Line
-    line(100,100,1300,100);
-    createBoxDataElement(1,180,150,66,"VEL");
-    createBoxDataElement(1,180,450,66,"ALT");
-    createBoxDataElement(1,1185,450,66,"YAW");
-    createBoxDataElement(1,710,600,66,"ROLL");
-    //Flight State
-    createBoxDataElement(4,710,200,66,"FSTATE");
-    hoverElementColorChange();
-    noFill();
-    //"VEL"
-    createGraphDataElemnt(180,300,0.5);
-    //"ALT"
-    createGraphDataElemnt(180,600,0.5);
-    //"PIT"
-    createGraphDataElemnt(1185,300,0.5);
-   //"YAW"
-    createGraphDataElemnt(1185,600,0.5);
-    //ROLL
-    createGraphDataElemnt(710,750,0.5);
+  //Roll 
+  stroke(144,238,144);
+  createBoxDataElement(1,100,100,66,"VEL");
+  //Pitch
+  createBoxDataElement(1,250,100,66,"ALT");
+  //Yaw
+  createBoxDataElement(1,400,100,66,"PO");
+  //Hover
+  hoverElementColorChange();
+  
+  //Map Canvas
+  fill(255);
+  rectMode(CENTER);
+  rect(1000,450,850,900); //Majic numbers(Dont know why this formats well (1000,450,850,900)
+
 }

@@ -61,9 +61,9 @@ boolean ElementCheck(float x, float y, float w, float h){
 void elementHighlight(float x,float y,float w,float h){
     float percent_increase = 0.10;
     if(hoverStillPresent){
+      stroke(144,238,144);
         rectMode(CENTER);
         //fill(255);
         rect(x,y,w + (percent_increase * w),h + (percent_increase * h),25);
     }
-    
 }
