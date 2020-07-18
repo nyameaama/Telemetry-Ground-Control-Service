@@ -7,8 +7,8 @@ void loadImagestoAPP(){
     arrowRight.resize(30,30);
 
     //Left Arrow
-    PImage arrowRight;
-    arrowRight = loadImage("telemetry src images/arrowRight.png");
+    PImage arrowLeft;
+    arrowRight = loadImage("telemetry src images/arrowLeft.png");
     arrowRight.resize(30,30);
 
     //Minus Operator
