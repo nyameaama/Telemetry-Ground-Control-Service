@@ -29,7 +29,12 @@ void createBoxDataElement(float size,float screenposX,float screenposY,float rea
     fill(textFill);
     textAlign(CENTER);
     text(reading,screenposX,screenposY);
-     //Store Location and size
+    StoreElementPosition(ElementTag,screenposX,screenposY,box_width,box_height);
+    stroke(textFill);
+}
+
+void StoreElementPosition(String ElementTag,float screenposX,float screenposY,float box_width,float box_height){
+    //Store Location and size
     if(ElementCheck(screenposX, screenposY,box_width,box_height) == true){
         //Do not put in array
     }else{
@@ -40,7 +45,6 @@ void createBoxDataElement(float size,float screenposX,float screenposY,float rea
         ElementPosArr[posArrNum + 3] = box_height;
         posArrNum += 4;
     }
-    stroke(textFill);
 }
 
 void createGraphDataElemnt(float screenposX,float screenposY,float reading){
