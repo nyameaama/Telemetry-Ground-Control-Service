@@ -4,9 +4,6 @@ String typing = "";
 // Variable to store saved text when return is hit
 String saved = "";
 String keyP;
-//Number of elements in ElementPosArr
-int posArrNum;
-float ElementPosArr[] = new float[64];
 
 void createBoxDataElement(float size,float screenposX,float screenposY,float reading,String ElementTag){
     float box_width = 110;
@@ -35,7 +32,7 @@ void createBoxDataElement(float size,float screenposX,float screenposY,float rea
 
 void StoreElementPosition(String ElementTag,float screenposX,float screenposY,float box_width,float box_height){
     //Store Location and size
-    if(ElementCheck(screenposX, screenposY,box_width,box_height) == true){
+    if(ElementCheck(screenposX,screenposY,box_width,box_height) == true){
         //Do not put in array
     }else{
         createUIelementID(ElementTag,screenposX,screenposY,box_width,box_height);

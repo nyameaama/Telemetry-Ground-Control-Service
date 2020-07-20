@@ -1,15 +1,16 @@
 boolean hoverStillPresent = false;
 
+
 void hoverElementColorChange(){
     //Search UI element positions to determine if mouse is hovering
     //over it
-    int leftSideBound,rightSideBound,upperBound,lowerBound;
-    int currentElementHeight;
-    int currentElementWidth;
-    int currentElementy = 3,
-    int currentElementx = 4;
+    float leftSideBound,rightSideBound,upperBound,lowerBound;
+    float currentElementHeight;
+    float currentElementWidth;
+    float currentElementy = 3;
+    float currentElementx = 4;
     int h = 1, w = 2, y = 3, x = 4;
-    int numberofElements = posArrNum / 4;
+    float numberofElements = posArrNum / 4;
     for(int i = 1; i < numberofElements;i++){
         currentElementWidth = (ElementPosArr[(4 * i) - w]);
         currentElementHeight = (ElementPosArr[(4 * i) - h]);
@@ -20,14 +21,12 @@ void hoverElementColorChange(){
         upperBound = currentElementy - (currentElementHeight / 2);
         lowerBound = currentElementy + (currentElementHeight / 2);
         if(mouseX >= leftSideBound && mouseX <= rightSideBound && mouseY >= upperBound && mouseY <= lowerBound ){
-            fill(255);
+            fill(0);
             text("Yes",400,10);
-            //Call color change function
             hoverStillPresent = true;
-            //Call highlight function
             elementHighlight(currentElementx,currentElementy,currentElementWidth,currentElementHeight);
         }else{
-            fill(255);
+            fill(0);
             text("No",400,10);
             hoverStillPresent = false;
         }
